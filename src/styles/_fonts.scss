@@ -1,0 +1,28 @@
+// General Sans - local font files (public/fonts)
+@font-face {
+  font-family: 'General Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('General Sans'), url('/fonts/GeneralSans-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'General Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: local('General Sans'), url('/fonts/GeneralSans-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'General Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('General Sans'), url('/fonts/GeneralSans-Semibold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'General Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('General Sans'), url('/fonts/GeneralSans-Bold.woff') format('woff');
+}
