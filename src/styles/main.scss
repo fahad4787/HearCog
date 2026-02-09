@@ -50,6 +50,9 @@ ul {
 a {
       color: #011632;
       text-decoration: none;
+      &:hover{
+            color: #F0B800;
+      }
 }
 
 .section {

@@ -1,0 +1,27 @@
+footer{
+      padding: 75px 0 18px 0;
+
+      .footerContent{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            border-bottom: 2px solid #011632;
+            padding-bottom: 30px;
+
+      }
+
+      .footerBottom{
+            padding-top: 30px;
+            font-size: 14px;
+      }
+}
+
+.footerNav{
+      margin: 0;
+      padding: 0;
+      list-style: none !important;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+}

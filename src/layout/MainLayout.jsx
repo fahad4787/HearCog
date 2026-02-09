@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
 import { usePageTitle } from "../hooks/usePageTitle";
+import Footer from "../components/Footer";
 
 function MainLayout() {
   usePageTitle();
@@ -12,6 +13,7 @@ function MainLayout() {
       <main>
         <Outlet />
       </main>
+      <Footer />
     </div>
   );
 }

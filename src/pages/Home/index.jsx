@@ -6,7 +6,7 @@ import OurCompetitive from "../../components/OurCompetitive";
 import ProfessionalServices from "../../components/ProfessionalServices";
 import FAQ from "../../components/FAQ";
 import Testimonials from "../../components/Testimonials";
-
+import Cta from "../../components/Cta";
 function Home() {
   return (
     <>
@@ -18,6 +18,7 @@ function Home() {
       <CardSection />
       <Testimonials />
       <FAQ />
+      <Cta />
     </>
   );
 }
