@@ -25,8 +25,14 @@ h6 {
                   background-repeat: no-repeat;
                   background-size: contain;
                   background-color: transparent;
-                  animation: contourReveal 3s cubic-bezier(0.22, 1, 0.36, 1) 0.3s infinite alternate;
+                  animation: contourReveal 3s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate;
             }
+      }
+}
+
+@for $i from 1 through 15 {
+      main > *:nth-child(#{$i}) .heading::after {
+            animation-delay: #{$i * 1.3}s;
       }
 }
 

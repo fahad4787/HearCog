@@ -1,0 +1,47 @@
+{
+  "BANNER_DATA": {
+    "heading": "About HearCog",
+    "description": "We're dedicated to transforming hearing care through precision diagnostics, personalized treatment plans, and compassionate support. Your journey to better hearing starts with expert care you can trust.",
+    "buttonText": "Book Appointment",
+    "secondButtonText": "Meet Our Team",
+    "image": "dummy.png",
+    "imageAlt": "Banner",
+    "stats": [
+      { "icon": "a1.svg", "line1": "5,000+", "line2": "Patients Served" },
+      { "icon": "a2.svg", "line1": "Certified", "line2": "Professionals" }
+    ]
+  },
+  "ABOUT_CARDS": [
+    {
+      "id": 1,
+      "badge": "Purpose",
+      "title": "Our Purpose",
+      "paragraphs": [
+        "At HearCog, we exist to make hearing healthcare accessible, understandable, and effective for everyone. We believe that clear hearing transforms lives, enabling deeper connections, richer experiences, and greater confidence.",
+        "Our mission is to bridge the gap between advanced audiological science and compassionate patient care. We work tirelessly to ensure that every individual receives personalized attention, evidence-based solutions, and ongoing support."
+      ]
+    },
+    {
+      "id": 2,
+      "badge": "Vision",
+      "title": "Our Vision",
+      "paragraphs": [
+        "We envision a world where hearing loss is no longer a barrier to living a full, engaged life. A future where advanced technology meets human touch, and where every person has access to expert hearing care.",
+        "Our vision extends beyond treatment—we aim to become a trusted partner in lifelong hearing wellness. We're building a community where patients feel heard, understood, and supported at every step of their journey."
+      ]
+    }
+  ],
+  "VALUES_CARDS": [
+    {
+      "id": 1,
+      "icon": "i1.svg",
+      "title": "Compassion",
+      "description": "We treat every patient with empathy, understanding that hearing loss affects more than just the ears—it impacts quality of life."
+    },
+    { "id": 2, "icon": "i2.svg", "title": "Accessibility", "description": "Quality hearing care should be available to everyone. We work to remove barriers and make our services inclusive." },
+    { "id": 3, "icon": "i3.svg", "title": "Clarity", "description": "Clear communication, transparent processes, and honest guidance are at the heart of everything we do." },
+    { "id": 4, "icon": "i4.svg", "title": "Privacy & Trust", "description": "Your personal information and health data are protected with industry-leading security and confidentiality standards." },
+    { "id": 5, "icon": "i5.svg", "title": "Continuous Care", "description": "Our relationship doesn't end after your first visit. We provide ongoing support, adjustments, and follow-ups." },
+    { "id": 6, "icon": "i6.svg", "title": "Commitment to Innovation", "description": "We embrace the latest hearing care technologies to deliver advanced solutions that enhance hearing health and quality of life." }
+  ]
+}

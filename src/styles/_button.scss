@@ -36,6 +36,10 @@
                   transform: translateX(100%) skewX(-12deg);
             }
       }
+      &.btn-outline{
+            border: 1px solid #6D2ECC;
+            color: #6D2ECC;
+      }
       &.btn-outline-primary {
             border: 1px solid #FFF;
             color: #fff;

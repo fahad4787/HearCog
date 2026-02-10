@@ -1,34 +1,55 @@
 import { Container, Row, Col, Image, Button } from "react-bootstrap";
 import styles from "./index.module.scss";
-import bannerImg from "../../assets/images/banner.png";
 import phoneIcon from "../../assets/icons/phone.svg";
-function Banner() {
+
+function Banner({ data, otherBanner }) {
+  if (!data) return null;
+
+  const { heading, description, buttonText, secondButtonText, contactTitle, contactPhone, image, imageAlt, stats } = data;
+
   return (
-    <div className={styles.banner}>
+    <div className={styles.banner + " " + (otherBanner ? styles.customBanner : "")}>
       <Container>
         <Row className="align-items-center">
           <Col md={6}>
-            <h1 className="heading">Hear It Right. Know Where to Go.</h1>
-            <p>A nationwide network connecting patients with qualified hearing-care professionals within 25 miles—ensuring personalized, trusted care close to home.</p>
+            <h1 className="heading">{heading}</h1>
+            <p>{description}</p>
             <div className={styles.cta}>
-              <Button>Start Your Hearing Journey</Button>
-              <div className={styles.contactInfo}>
-                <div className={styles.icon}>
-                  <Image src={phoneIcon} alt="Phone" />
+              <Button>{buttonText}</Button>
+              {secondButtonText ? (
+                <Button variant="outline" className="ms-2">
+                  {secondButtonText}
+                </Button>
+              ) : (
+                <div className={styles.contactInfo}>
+                  <div className={styles.icon}>
+                    <Image src={phoneIcon} alt="Phone" />
+                  </div>
+                  <div>
+                    <b>{contactTitle}</b>
+                    <small>{contactPhone}</small>
+                  </div>
                 </div>
-                <div>
-                  <b>24/7 Hearing Care Assistance</b>
-                  <small>0900-78601</small>
-                </div>
-              </div>
-              <div className={styles.card}>
-                
-              </div>
+              )}
+              <div className={styles.card} />
             </div>
+            {otherBanner && stats && stats.length > 0 && (
+              <div className={styles.cta + " " + styles.otherBannerCta}>
+                {stats.map((item, index) => (
+                  <div key={index} className={styles.iconBox}>
+                    <Image src={item.icon} alt={item.line1 || ""} />
+                    <div>
+                      <p>{item.line1}</p>
+                      <p>{item.line2}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </Col>
           <Col md={6}>
-            <div className="imgBox">
-              <Image src={bannerImg} alt="Banner" />
+            <div className={`imgBox ${otherBanner ? styles.otherBanner : ""}`}>
+              <Image src={image} alt={imageAlt} />
             </div>
           </Col>
         </Row>
