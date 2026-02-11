@@ -1,7 +1,10 @@
 import { Container, Row, Col, Card, Image } from "react-bootstrap";
+import { ScrollReveal } from "../ScrollAnimation";
 import styles from "./index.module.scss";
 import img1 from "../../assets/images/card1.png";
 import img2 from "../../assets/images/card2.png";
+
+const ROW_DELAY = 0.15;
 
 const LIGHT_CARD = {
   title: "Problems in Hearing Healthcare",
@@ -45,35 +48,44 @@ function CardSection() {
   return (
     <section className="section">
       <Container>
-        {ROWS.map((row, index) => (
-          <Row
-            key={index}
-            className={`align-items-stretch justify-content-between ${row.rowClass} ${row.reverse ? "flex-lg-row-reverse" : ""}`}
-          >
-            <Col lg={5}>
-              <Card className={`${styles.card} ${row.lightCard.cardClass}`}>
-                <h2 className={row.lightCard.titleClass}>{row.lightCard.title}</h2>
-                <p>{row.lightCard.intro}</p>
-                <div className={`imgBox ${styles.imgBox}`}>
-                  <Image src={row.lightCard.image} alt={row.lightCard.imageAlt} />
-                </div>
-              </Card>
-            </Col>
-            <Col lg={7}>
-              <Card className={`${styles.card} ${index === 1 ? styles.green : ""}`}>
-                {row.listItems.map((item, i) => {
-                const HeadingTag = `h${item.level}`;
-                return (
-                  <div key={i}>
-                    <HeadingTag>{item.heading}</HeadingTag>
-                    <p>{item.text}</p>
-                  </div>
-                );
-              })}
-              </Card>
-            </Col>
-          </Row>
-        ))}
+        {ROWS.map((row, index) => {
+          const baseDelay = index * ROW_DELAY;
+          const firstZoom = index === 0 ? "zoomIn" : "zoomOut";
+          const secondZoom = index === 0 ? "zoomOut" : "zoomIn";
+          return (
+            <Row
+              key={index}
+              className={`align-items-stretch justify-content-between ${row.rowClass} ${row.reverse ? "flex-lg-row-reverse" : ""}`}
+            >
+              <Col lg={5}>
+                <ScrollReveal animation={firstZoom} delay={baseDelay}>
+                  <Card className={`${styles.card} ${row.lightCard.cardClass}`}>
+                    <h2 className={row.lightCard.titleClass}>{row.lightCard.title}</h2>
+                    <p>{row.lightCard.intro}</p>
+                    <div className={`imgBox ${styles.imgBox}`}>
+                      <Image src={row.lightCard.image} alt={row.lightCard.imageAlt} />
+                    </div>
+                  </Card>
+                </ScrollReveal>
+              </Col>
+              <Col lg={7}>
+                <ScrollReveal animation={secondZoom} delay={baseDelay + 0.1}>
+                  <Card className={`${styles.card} ${index === 1 ? styles.green : ""}`}>
+                    {row.listItems.map((item, i) => {
+                      const HeadingTag = `h${item.level}`;
+                      return (
+                        <div key={i}>
+                          <HeadingTag>{item.heading}</HeadingTag>
+                          <p>{item.text}</p>
+                        </div>
+                      );
+                    })}
+                  </Card>
+                </ScrollReveal>
+              </Col>
+            </Row>
+          );
+        })}
       </Container>
     </section>
   );

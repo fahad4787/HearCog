@@ -1,10 +1,13 @@
+import { ScrollReveal } from "../ScrollAnimation";
 import styles from "./index.module.scss";
-function SectionHeading({ title, desc }) {
+
+function SectionHeading({ title, desc, small, leftAlign }) {
+  const className = [styles.sectionHeading, small && styles.small, leftAlign && styles.leftAlign].filter(Boolean).join(" ");
   return (
-    <div className={styles.sectionHeading}>
+    <ScrollReveal animation="fadeUp" className={className}>
       <h2 className="heading">{title}</h2>
       <p>{desc}</p>
-    </div>
+    </ScrollReveal>
   );
 }
 

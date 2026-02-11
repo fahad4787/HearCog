@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { Button, Container } from "react-bootstrap";
 import SectionHeading from "../SectionHeading";
 import FormField from "../FormField";
+import { ScrollReveal } from "../ScrollAnimation";
 import styles from "./index.module.scss";
 
 const FIELDS = [
@@ -41,23 +42,25 @@ function FindProvider() {
     <section className="section">
       <Container>
         <SectionHeading title="Find Provider" desc="Imagine hearing the way it should be. You'll know exactly where to go." />
-        <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-          <div className={styles.fields}>
-            {FIELDS.map((field) => (
-              <FormField
-                key={field.name}
-                type={field.type}
-                name={field.name}
-                label={field.label}
-                placeholder={field.placeholder}
-                options={field.options}
-                register={register}
-                error={errors[field.name]}
-              />
-            ))}
-          </div>
-          <Button type="submit"> Find a Provider</Button>
-        </form>
+        <ScrollReveal animation="fadeUp" delay={0.15}>
+          <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+            <div className={styles.fields}>
+              {FIELDS.map((field) => (
+                <FormField
+                  key={field.name}
+                  type={field.type}
+                  name={field.name}
+                  label={field.label}
+                  placeholder={field.placeholder}
+                  options={field.options}
+                  register={register}
+                  error={errors[field.name]}
+                />
+              ))}
+            </div>
+            <Button type="submit"> Find a Provider</Button>
+          </form>
+        </ScrollReveal>
       </Container>
     </section>
   );

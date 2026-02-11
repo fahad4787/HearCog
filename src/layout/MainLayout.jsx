@@ -7,13 +7,13 @@ function MainLayout() {
   usePageTitle();
 
   return (
-    <div className="wrapper">
+    <div id="wrapper">
       <Header />
 
       <main>
         <Outlet />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

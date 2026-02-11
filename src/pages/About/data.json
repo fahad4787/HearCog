@@ -112,5 +112,61 @@
         "imageAlt": "Assessment & Testing"
       }
     ]
-  }
+  },
+  "JOURNEY": {
+    "title": "Your Journey With Us",
+    "desc": "A seamless, patient-centered process designed for your comfort and success at every step of your hearing health journey.",
+    "steps": [
+      {
+        "id": 1,
+        "icon": "j1.svg",
+        "title": "Book Your Visit",
+        "description": "Book online or call us, and we'll confirm your appointment and share what to expect."
+      },
+      {
+        "id": 2,
+        "icon": "j2.svg",
+        "title": "Comprehensive Assessment",
+        "description": "We run accurate hearing tests and explain your results in simple, clear words."
+      },
+      {
+        "id": 3,
+        "icon": "j3.svg",
+        "title": "Personalized Solution",
+        "description": "We recommend the best plan or device based on your needs, lifestyle, and budget."
+      },
+      {
+        "id": 4,
+        "icon": "j4.svg",
+        "title": "Ongoing Care",
+        "description": "We stay with you for follow-ups, fine-tuning, and continuous support whenever you need it."
+      }
+    ]
+  },
+  "EXPERTS": [
+    {
+      "id": 1,
+      "image": "avatar1.png",
+      "imageAlt": "Expert 1",
+      "name": "Dr. James Chen",
+      "role": "Senior Audiologist",
+      "credentials": "Au.D., CCC-A"
+    },
+    {
+      "id": 2,
+      "image": "avatar2.png",
+      "imageAlt": "Expert 2",
+      "name": "Dr. Sarah Mitchell",
+      "role": "Clinical Audiologist",
+      "credentials": "Ph.D., CCC-A"
+    },
+    {
+      "id": 3,
+      "image": "avatar3.png",
+      "imageAlt": "Expert 3",
+      "name": "Dr. David Park",
+      "role": "Hearing Specialist",
+      "credentials": "Au.D., FAAA"
+    }
+  ]
 }

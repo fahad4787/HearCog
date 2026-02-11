@@ -1,8 +1,12 @@
+import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { Navbar, Nav, Container, Image, Button } from 'react-bootstrap'
+import { Container, Image, Button } from 'react-bootstrap'
+import { TbMenu2, TbX } from 'react-icons/tb'
 import logo from "../../assets/images/logo.svg";
 import styles from "./index.module.scss";
+
 function Header() {
+  const [open, setOpen] = useState(false);
   const links = [
     {
       id: 1,
@@ -36,27 +40,29 @@ function Header() {
         <Link to="/" className={styles.logo}>
           <Image src={logo} alt="Logo" />
         </Link>
-        <nav className={styles.nav}>
-          <ul>
-           {
-            links.map((link) => (
-              <li key={link.id}>
-                <NavLink
-                  to={link.to}
-                  className={({ isActive }) => (isActive ? styles.active : undefined)}
-                >
-                  {link.label}
-                </NavLink>
-              </li>
-            ))
-           }
-          </ul>
-        </nav>
-        <div className={styles.cta}>
-          <Link to="/login" className='linkBtn'>Sign Up</Link>
-          <Button>
-            <span>Login</span>
-          </Button>
+        <button type="button" className={styles.toggle} onClick={() => setOpen(!open)} aria-label={open ? 'Close menu' : 'Open menu'}>
+          {open ? <TbX size={26} /> : <TbMenu2 size={26} />}
+        </button>
+        <div className={`${styles.backdrop} ${open ? styles.open : ''}`} onClick={() => setOpen(false)} aria-hidden="true" />
+        <div className={`${styles.menuWrap} ${open ? styles.open : ''}`}>
+          <Link to="/" className={styles.menuLogo} onClick={() => setOpen(false)}>
+            <Image src={logo} alt="Logo" />
+          </Link>
+          <nav className={styles.nav}>
+            <ul>
+              {links.map((link) => (
+                <li key={link.id}>
+                  <NavLink to={link.to} className={({ isActive }) => (isActive ? styles.active : undefined)} onClick={() => setOpen(false)}>
+                    {link.label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <div className={styles.cta}>
+            <Link to="/login" className="linkBtn" onClick={() => setOpen(false)}>Sign Up</Link>
+            <Button onClick={() => setOpen(false)}><span>Login</span></Button>
+          </div>
         </div>
       </Container>
     </header>

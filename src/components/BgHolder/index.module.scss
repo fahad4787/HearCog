@@ -1,7 +1,11 @@
+@use '../../styles/breakpoints' as bp;
 .bgHolder {
       background-color: rgba(106, 90, 224, 0.3);
       border-radius: 10px;
       padding: 35px;
+      @include bp.below(bp.$bp-lg) {
+            padding: 20px;
+      }
 }
 
 .customCard {
@@ -9,6 +13,9 @@
       text-align: center;
       font-size: 15px;
       color: #3C4959;
+      @include bp.below(bp.$bp-lg) {
+            padding: 12px !important;
+      }
 
       .icon {
             width: 60px;

@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Accordion, Container } from "react-bootstrap";
 import { FaPlus, FaMinus } from "react-icons/fa";
-import styles from "./index.module.scss";
 import SectionHeading from "../SectionHeading";
+import { ScrollReveal } from "../ScrollAnimation";
+import styles from "./index.module.scss";
 
 const FAQ_DATA = [
   {
@@ -42,14 +43,16 @@ function FAQ() {
     <section className="section">
       <Container>
         <SectionHeading
+          small
           title="Frequently Asked Questions"
           desc="Clear answers to common questions about how we connect patients with trusted hearing care professionals."
         />
-        <Accordion
-          activeKey={activeKey}
-          onSelect={(k) => setActiveKey(k ?? null)}
-          className={styles.accordion}
-        >
+        <ScrollReveal animation="zoomOut" delay={0.1}>
+          <Accordion
+            activeKey={activeKey}
+            onSelect={(k) => setActiveKey(k ?? null)}
+            className={styles.accordion}
+          >
           {FAQ_DATA.map((item) => {
             const isOpen = activeKey === item.id;
             return (
@@ -77,7 +80,8 @@ function FAQ() {
               </Accordion.Item>
             );
           })}
-        </Accordion>
+          </Accordion>
+        </ScrollReveal>
       </Container>
     </section>
   );

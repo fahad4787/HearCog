@@ -1,3 +1,4 @@
+@use 'breakpoints' as bp;
 h1,
 h2,
 h3,
@@ -39,9 +40,32 @@ h6 {
 h1 {
       font-size: 60px;
       font-weight: 600;
+     
+      @include bp.below(bp.$bp-xl) {
+            font-size: 50px;
+      }
+
+      @include bp.below(bp.$bp-lg) {
+            font-size: 45px;
+      }
+      @include bp.below(bp.$bp-md) {
+            font-size: 35px;
+      }
+      @include bp.below(bp.$bp-sm) {
+            font-size: 30px;
+      }
 }
 h2{
       font-size: 36px;
+      @include bp.below(bp.$bp-lg) {
+            font-size: 30px;
+      }
+      @include bp.below(bp.$bp-sm) {
+            font-size: 28px;
+      }
+      @include bp.below(bp.$bp-xs) {
+            font-size: 24px;
+      }
 }
 h5{
       font-weight: 600;
@@ -69,4 +93,10 @@ small {
 
 .light-text{
       color: #353535;
+}
+.text-purple{
+      color: #6D2ECC;
+}
+.text-muted{
+      color: #3C4959;
 }

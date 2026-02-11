@@ -1,0 +1,103 @@
+@use "../../styles/breakpoints" as bp;
+
+.journeySteps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 100px;
+      text-align: center;
+      counter-reset: journeyStep;
+
+      @include bp.below(bp.$bp-lg) {
+            gap: 60px;
+      }
+
+      @include bp.below(bp.$bp-md) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+      }
+
+      @include bp.below(bp.$bp-sm) {
+            grid-template-columns: 1fr;
+            gap: 32px;
+      }
+
+      li {
+            counter-increment: journeyStep;
+
+            .journeyStepIcon {
+                  position: relative;
+                  width: 60px;
+                  margin: auto;
+                  z-index: -1;
+
+                  &::before {
+                        content: counter(journeyStep);
+                        position: absolute;
+                        top: -3px;
+                        left: -3px;
+                        min-width: 24px;
+                        height: 24px;
+                        padding: 0 6px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: var(--Button-Primary, #6D2ECC);
+                        color: #fff;
+                        font-size: 13px;
+                        font-weight: 600;
+                        border-radius: 50%;
+                        line-height: 1;
+                        z-index: 1;
+                  }
+
+                  img {
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                  }
+
+                  &:after {
+                        position: absolute;
+                        content: "";
+                        top: 10px;
+                        right: -240px;
+                        width: 200px;
+                        height: 100%;
+                        background-image: url("../../assets/Icons/border.svg");
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        z-index: 1;
+
+                        @include bp.below(bp.$bp-xl) {
+                              right: -200px;
+                              width: 150px;
+                        }
+
+                        @include bp.below(bp.$bp-lg) {
+                              right: -175px;
+                        }
+
+                        @include bp.below(bp.$bp-md) {
+                              display: none;
+                        }
+                  }
+            }
+
+            &:nth-child(even) {
+                  .journeyStepIcon {
+                        &:after {
+                              background-image: url("../../assets/Icons/border2.svg");
+                              top: -10px;
+                        }
+                  }
+            }
+
+            &:last-child {
+                  .journeyStepIcon {
+                        &:after {
+                              display: none;
+                        }
+                  }
+            }
+      }
+}

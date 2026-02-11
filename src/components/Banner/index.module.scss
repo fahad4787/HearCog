@@ -1,5 +1,9 @@
+@use '../../styles/breakpoints' as bp;
 .banner {
       padding: 100px 0 0;
+      @include bp.below(bp.$bp-lg) {
+            padding: 50px 0 0;
+      }
       &.customBanner{
            background-color: #F6F5FD;
            padding:100px 0;
@@ -18,6 +22,11 @@
       align-items: center;
       gap: 12px;
       margin-bottom:50px;
+      @include bp.below(bp.$bp-md) {
+            margin-bottom: 0px;
+            flex-wrap: wrap;
+            justify-content: center;
+      }
 
       button {
             min-width: 160px;

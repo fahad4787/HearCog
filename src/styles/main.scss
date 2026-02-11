@@ -2,6 +2,7 @@
 @use 'keyframes';
 @use 'typography';
 @use 'button';
+@use 'form';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 body {
@@ -76,16 +77,20 @@ a {
 }
 
 .section {
-      padding: 55px 0;
+      padding: 40px 0;
       position: relative;
 
       &.bg {
             background-color: rgba(106, 90, 224, 0.06);
-            margin: 55px 0;
+            margin:55px 0;
+            padding: 80px 0;
+
       }
 
       &.purpleBg{
             background-color: #6D2ECC;
+            padding: 80px 0;
+            margin: 55px 0;
             [class*="sectionHeading"]{
                   color: #fff;
                   h2{
@@ -103,6 +108,24 @@ a {
                   transform-origin: right center;
                   animation: heartbeat 1.2s ease-in-out infinite;
                   pointer-events: none;
+            }
+      }
+
+      &.contactUs{
+            &:before{
+                  position: absolute;
+                  content: "";
+                  inset: 0;
+                  height: 380px;
+                  width: 100%;
+                  background-color: #F6F5FD;
+            }
+
+            h1{
+                  text-align: center;
+                  max-width: max-content;
+                  margin: auto;
+                  margin-bottom: 55px;
             }
       }
 
@@ -135,6 +158,33 @@ a {
       padding: 20px !important;
       border-radius: 16px;
       min-height: 100%;
+
+      &.ImageCard{
+            padding: 0 !important;
+            .textBox{
+                  padding: 16px 20px;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 4px;
+                  small{
+                        font-size: 12px;
+                        font-weight: 300;
+                  }
+            }
+      }
+
+      &.contactUsCard{
+            padding: 40px 30px !important;
+      }
+      &.purpleBg{
+            background: #C09CF3;
+            color: #fff;
+            border: none !important;
+            padding: 30px 20px !important;
+            h4{
+                  color: #fff;
+            }
+      }
 }
 
 .badge{
