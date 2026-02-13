@@ -31,7 +31,6 @@ function JoinProvider() {
   return (
     <>
       <Banner data={bannerData} otherBanner provider />
-
       <section className="section">
         <Container>
           <SectionHeading
